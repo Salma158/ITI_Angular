@@ -1,0 +1,31 @@
+*{
+  padding: 0;
+  margin :0;
+}
+.center-div {
+    background-color: grey;
+    width: 200px;
+    height: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-inside{
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  gap : 30px;
+}
+.name {
+    color: white;
+    font-size: 18px; 
+} 
+.cont{
+  height:500px;
+  background-color:  #fef9f9;
+}
