@@ -1,0 +1,17 @@
+<div class="card h-100">
+    <img [src]="userItem.profilePicture" class="card-img-top" alt="..." style="height: 400px;">
+    <div class="card-body">
+        <div class="d-flex">
+            <h5 class="card-title" >{{userItem.username}}</h5>
+            @if(userItem.verified){
+            <img width="40px" height="30px" class="px-2" src="../../../assets/pics/green.png" />
+            } @else{
+            <img width="40px" height="30px" class="px-2" src="../../../assets/pics/red.png" />
+            }
+        </div>
+        <p class="card-text">{{userItem.email}}</p>
+    </div>
+    <div class="card-footer">
+        <small class="text-body-secondary">{{userItem.phoneNumber}}</small>
+    </div>
+</div>

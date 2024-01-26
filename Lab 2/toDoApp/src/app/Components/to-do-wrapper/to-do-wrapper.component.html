@@ -1,0 +1,4 @@
+<div class="container my-5">
+    <app-to-do-form (sendToParent)="sendToList($event)" ></app-to-do-form>
+    <app-to-do-list [task]="toDoItem"></app-to-do-list>
+</div>

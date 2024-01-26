@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="containerInside p-4">
+        <div class="d-flex">
+            <h2>TodoList</h2>
+            <h2 class="text-muted px-4">Let's get some work done!</h2>
+        </div>
+    </div>
+    <div class="containerInside px-4" >
+       
+        @for(task of tasks; track $index){
+            @if(task.id != 0){
+                <app-list-item [listItem]="task" (sendToParent)="deleteTask($event)"></app-list-item>
+            }
+            }
+    </div>
+</div>
