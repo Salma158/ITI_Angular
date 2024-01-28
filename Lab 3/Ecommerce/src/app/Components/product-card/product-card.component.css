@@ -1,0 +1,30 @@
+img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+.title{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.stock-overlay {
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .in-stock {
+    background-color: green;
+  }
+  
+  .out-of-stock {
+    background-color: red;
+  }
+  
