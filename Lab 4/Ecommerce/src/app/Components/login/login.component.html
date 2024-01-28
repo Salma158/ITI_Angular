@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="form-container">
+                <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm)">
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control mt-2" id="email" aria-describedby="emailHelp"
+                            name="email" placeholder="Enter email" autocomplete="off" autofocus="on" ngModel required
+                            pattern="[a-zA-Z0-9]{5,10}@(gmail|yahoo).com" #email="ngModel">
+                        @if(email.invalid && email.touched){
+                        <div id="emailHelp" class="form-text text-danger">
+                            @if(email.errors?.['required']){
+                            <small>this field is required.</small>
+                            }
+                            @if(email.errors?.['pattern']){
+                            <small>this pattern doesn't match email pattern.</small>
+                            }
+                        </div>
+                        }
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control mt-2" id="password" placeholder="Enter password" name="password"
+                            ngModel required #password="ngModel">
+                            @if(password.invalid && password.touched){
+                                <div id="passwordHelp" class="form-text text-danger">
+                                    @if(password.errors?.['required']){
+                                    <small>this field is required.</small>
+                                    }
+                                </div>
+                            }
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Login</button>
+                </form>
+            </div>
+            <h4 class="text-center mt-3">Don't have an account? <a routerLink="/user-register"
+                    class="register-link">Register</a> </h4>
+        </div>
+
+    </div>
+</div>

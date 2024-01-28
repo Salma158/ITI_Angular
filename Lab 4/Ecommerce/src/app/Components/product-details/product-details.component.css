@@ -1,0 +1,22 @@
+img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.stock {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.in-stock {
+    background-color: green;
+    width: 90px;
+}
+
+.out-of-stock {
+    background-color: red;
+    width: 130px;
+}

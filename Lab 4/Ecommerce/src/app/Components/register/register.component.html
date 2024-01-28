@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card" style="border-radius: 15px; margin-top: 100px; margin-bottom: 100px;">
+                <div class="card-body p-4">
+                    <h2 class="text-uppercase text-center mb-4">Create an account</h2>
+                    <form [formGroup]="userForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Name"
+                                formControlName="name" />
+                            @if(userForm.controls['name'].invalid && userForm.controls['name'].touched){
+                            <div id="nameHelp" class="form-text text-danger">
+                                @if(userForm.controls['name'].errors?.['required']){
+                                <small>this field is required.</small>
+                                }
+                            </div>
+                            }
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="user-name" class="form-label">User Name</label>
+                            <input type="text" id="user-name" class="form-control" placeholder="User Name"
+                                formControlName="userName" />                                
+                            @if(userForm.controls['userName'].invalid && userForm.controls['userName'].touched){
+                            <div id="nameHelp" class="form-text text-danger">
+                                @if(userForm.controls['userName'].errors?.['required']){
+                                <small>this field is required.</small>
+                                }
+                                @if(userForm.controls['userName'].errors?.['noSpace']){
+                                <small>user name should not contain spaces.</small>
+                                }
+                                @if(userForm.controls['userName'].errors?.['usernameExists']){
+                                <small>user name already exits</small>
+                                }
+                            </div>
+                            }
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Email"
+                                formControlName="email" />
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="Password"
+                                autocomplete="off" formControlName="password" />
+                            @if(userForm.controls['password'].invalid && userForm.controls['password'].touched){
+                            <div id="passHelp" class="form-text text-danger">
+                                @if(userForm.controls['password'].errors?.['required']){
+                                <small>this field is required.</small>
+                                }
+                                @if(userForm.controls['password'].errors?.['minlength']){
+                                <small>password must contain at least 8 characters</small>
+                                }
+                                @if(userForm.controls['password'].errors?.['passwordStrength']){
+                                <small>{{userForm.controls['password'].errors?.['passwordStrength'].message}}</small>
+                                }
+                            </div>
+                            }
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="confirm" class="form-label">Confirm Password</label>
+                            <input type="password" id="confirm" class="form-control" placeholder="Confirm Password"
+                                formControlName="confirmPassword" />
+                            @if( (userForm.controls['confirmPassword'].invalid ||
+                            userForm.errors?.['passwordmatcherror'] )
+                            && userForm.controls['confirmPassword'].touched){
+                            <div id="confirmHelp" class="form-text text-danger">
+                                @if(userForm.errors?.['passwordmatcherror']){
+                                <small>Passwords do not match. </small>
+                                }
+                                @if(userForm.controls['confirmPassword'].errors?.['required']){
+                                <small>this field is required. </small>
+                                }
+                            </div>
+                            }
+                        </div>
+                            <div class="d-grid">
+                                <button type="button" class="btn btn-success btn-lg text-light">Register</button>
+                            </div>
+
+                            <p class="text-center text-muted mt-4 mb-0">Have already an account? <a href="#"
+                                    class="fw-bold text-body"><u>Login here</u></a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
