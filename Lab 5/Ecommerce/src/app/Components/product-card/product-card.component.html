@@ -1,0 +1,20 @@
+<div class="card h-100">
+  <div style="position: relative;">
+    <img [src]="productItem.images[0]" class="Card image cap" alt="...">
+    @if(productItem.stock > 0 ){
+      <p class="stock-overlay in-stock">In Stock</p>
+    }@else{
+      <p class="stock-overlay out-of-stock">Out of Stock</p>
+    }
+  </div>
+  <div class="card-body">
+    <a class="title" [routerLink]="['product-details', productItem.id]">
+      {{productItem.title}}
+    </a>
+    <p class="card-text">{{productItem.price}} $</p>
+    <p class="card-text">{{productItem.rating}}</p>
+  </div>
+  <div class="card-footer">
+    <a href="#" class="btn btn-primary" (click)="addToCart()">Add to Cart</a>
+  </div>
+</div>
